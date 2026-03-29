@@ -42,7 +42,7 @@ Enhanced Image → Generator F → Reconstructed Echo
 
 ## Architecture Overview
 
-![CycleGAN Architecture](assets/cyclegan_diagram.png)
+![CycleGAN Architecture](assets/Technical_Diagram.jpeg)
 
 **Training Flow:**
 
@@ -53,11 +53,9 @@ Enhanced Image → Generator F → Reconstructed Echo
 
 ---
 
-### Video Demo
+##  Video Explaination
 
-https://github.com/user-attachments/assets/YOUR_VIDEO_ID
-
-> Current results are from early-stage training (~10 epochs) as a prototype. Further training (75–100 epochs) is expected to significantly improve image clarity and stability.
+[![Watch Demo](assets/thumbnail.png)](https://youtu.be/yEM8OEfaFXc)
 
 ---
 
