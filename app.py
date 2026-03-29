@@ -4,6 +4,9 @@ import torchvision.transforms as transforms
 from PIL import Image
 import numpy as np
 from model.generator import CycleGenerator
+import os
+
+port = int(os.environ.get("PORT", 10000))
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -69,4 +72,4 @@ with gr.Blocks() as demo:
         </div>
     """)
 
-demo.launch(server_name="0.0.0.0", server_port=10000)
+demo.launch(server_name="0.0.0.0", port)
