@@ -6,7 +6,6 @@ import numpy as np
 from model.generator import CycleGenerator
 import os
 
-port = int(os.environ.get("PORT", 10000))
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -71,5 +70,7 @@ with gr.Blocks() as demo:
             CycleGAN · Unpaired Training · 3583 Echo + MRI images
         </div>
     """)
+
+port = int(os.environ.get("PORT", 10000))
 
 demo.launch(server_name="0.0.0.0", server_port=port)
