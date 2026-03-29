@@ -21,6 +21,7 @@ transform = transforms.Compose([
 ])
 
 def enhance(image):
+    # None check
     if image is None:
         return None
     if not isinstance(image, Image.Image):
@@ -43,13 +44,24 @@ with gr.Blocks() as demo:
             </p>
         </div>
     """)
+
     with gr.Row():
         with gr.Column():
-            inp = gr.Image(type="pil", label="Upload Echo Image", height=300)
+            inp = gr.Image(
+                type="pil",
+                label="Upload Echo Image",
+                height=300
+            )
             btn = gr.Button("✦ Enhance", variant="primary")
+
         with gr.Column():
-            out = gr.Image(label="Generated Enhanced Echo", height=300)
+            out = gr.Image(
+                label="Generated Enhanced Echo",
+                height=300
+            )
+
     btn.click(fn=enhance, inputs=inp, outputs=out)
+
     gr.HTML("""
         <div style='text-align:center; padding:24px 0 8px;
                     color:#adb5bd; font-size:13px'>
@@ -57,8 +69,4 @@ with gr.Blocks() as demo:
         </div>
     """)
 
-demo.launch(
-    server_name="0.0.0.0",
-    server_port=7860,
-    ssr_mode=False
-)
+demo.launch(server_name="0.0.0.0", server_port=7860, ssr_mode=False)
