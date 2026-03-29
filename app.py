@@ -69,4 +69,4 @@ with gr.Blocks() as demo:
         </div>
     """)
 
-demo.launch()
+demo.launch(server_name="0.0.0.0", server_port=10000)
